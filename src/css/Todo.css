@@ -1,0 +1,22 @@
+.todo {
+  padding: 5px;
+  width: 300px;
+  margin: 5px;
+  background-color: yellow;
+}
+
+.text {
+  font-size: 20px;
+  margin: 5px 0;
+}
+
+.completed {
+  background-color: gray;
+}
+
+button {
+  padding: 8px 3px;
+  border-radius: 2px;
+  background-color: #ccc;
+  margin-right: 5px;
+}

@@ -15,8 +15,8 @@ const ToDoList = ({ todos, onMarkClick, onDeleteClick}) => {
           <Todo 
             key={todo.text}
             todo={todo}
-            onMarkClick={onMarkClick(index)}
-            onDeleteClick={onDeleteClick(index)}
+            onMarkClick={() => onMarkClick(index)}
+            onDeleteClick={() => onDeleteClick(index)}
             />
           )
       })}

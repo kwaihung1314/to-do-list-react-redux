@@ -1,11 +1,12 @@
 import React from 'react'
+import '../css/Todo.css'
 
 const todo = ({ todo, onMarkClick, onDeleteClick }) => {
   return (
     <div className={'todo ' + (todo.completed? 'completed': '')}>
-      <div>{todo.text}</div>
-      <a onClick={onMarkClick} href>Mark Complete</a>
-      <a onClick={onDeleteClick} href>Delete X</a>
+      <div className="text">{todo.text}</div>
+      <button onClick={onMarkClick}>Mark Complete</button>
+      <button onClick={onDeleteClick}>Delete X</button>
     </div>
   )
 }
