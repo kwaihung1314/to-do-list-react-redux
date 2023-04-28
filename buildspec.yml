@@ -1,0 +1,24 @@
+version: 0.1
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16.20.0
+    commands:
+      - echo Install stage
+      - npm i npm@latest -g
+      - pip install --upgrade pip
+      - pip install --upgrade awscli
+  pre_build:
+    commands:
+      - echo Pre_build stage
+      - npm install
+  build:
+    commands:
+      - echo Build stage
+      - npm run build
+  post_build:
+    commands:
+      - echo PostBuild stage
+      - aws s3 sync ./dist $S3_BUCKET
+      - aws cloudfront create-invalidation --distribution-id $CF_DISTRIBUTION_ID --paths /*
